@@ -1819,7 +1819,9 @@ remove_items() {
     if [ -s "$remove_words" ]; then
       echo "
         <details><summary>Previously acknowledged words that are now absent
-        </summary>$(cat "$remove_words")</details>
+        </summary>$(cat "$remove_words")
+
+        </details>
       " | strip_lead_and_blanks
       echo "stale_words=$remove_words" >> "$output_variables"
     else
@@ -2052,6 +2054,7 @@ spelling_body() {
         File matching is via Perl regular expressions.
 
         To check these files, more of their words need to be in the dictionary than not. You can use `patterns.txt` to exclude portions, add items to the dictionary (e.g. by adding them to `allow.txt`), or fix typos.
+
         </details>
       ' | strip_lead)"
     fi
@@ -2080,6 +2083,7 @@ spelling_body() {
         $details_note
 
         $warnings_details
+
         </details>
         " | strip_lead)"
       fi
@@ -2617,6 +2621,7 @@ more_misspellings() {
 $B
 $(cat "$tokens_file")
 $B
+
 </details>"
     else
       unknown_word_body="$n#### $unrecognized_words_title$N$(cat "$tokens_file")"
