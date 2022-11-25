@@ -2621,7 +2621,7 @@ more_misspellings() {
 $B
 $(cat "$tokens_file")
 $B
-
+<!-- -->
 </details>"
     else
       unknown_word_body="$n#### $unrecognized_words_title$N$(cat "$tokens_file")"
